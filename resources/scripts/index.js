@@ -12,28 +12,31 @@ const gameHistoryParagraph =  document.getElementById(`game-history`);
 let game;
 
 // hide game screen
-//use "gameScreen.classList.add(`d-none`);"
+//gameScreen.classList.add(`d-none`);
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
-
+  //scoreParagraph.innerHTML = `<p>${userName.value} : ${game.score.user} v CPU: ${game.score.cpu}</p>`;
 }
 
 // updateGameHistoryUI
 function updateGameHistoryUI(){
-
+  //gameHistoryParagraph.innerHTML = game.gameHistoryLog;
 }
 
 // start-game-button EventListener
 startGameButton.addEventListener(`click`, function () {
-  const username = 
-  game = new RockPaperScissors(userName);
+  game = new RockPaperScissors(userName.value);
+  welcomeScreen.classList.add(`d-none`);
+  gameScreen.classList.remove(`d-none`);
   // Complete
 });
 
 // go-button EventListener
 goButton.addEventListener(`click`, function () {
-  
+  game.play(userSelection.value);
+  updateScoreTallyUI();
+  updateGameHistoryUI();
 });
 
 // If you're doing the extra-credit, uncomment the below: reset-game-button
