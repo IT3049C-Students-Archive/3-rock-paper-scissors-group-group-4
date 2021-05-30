@@ -1,3 +1,5 @@
+const { lowerCase } = require("lodash");
+
 class RockPaperScissors {
   constructor(username) {
     this.username = username;
@@ -14,8 +16,9 @@ class RockPaperScissors {
    */
   generateCPUResponse(){
     const acceptedValues = [ `rock`, `paper`, `scissors` ];
-
-    return ;
+    var randomIndex = Math.floor(Math.random() * 3); 
+    var randomElement = acceptedValues[randomIndex]; 
+    return randomElement;
   }
   /**
    * returns one of the following values: `win`, `lose`, `tie`
@@ -34,6 +37,20 @@ class RockPaperScissors {
    */
   determineWinner(userSelection, cpuSelection){
 
+    if(userSelection == cpuSelection) {
+      return "tie" ;
+    }
+
+    if(((userSelection == "rock") && (cpuSelection == "scissors")) || 
+    ((userSelection == "paper") && (cpuSelection == "rock")) || 
+    ((userSelection == "scissors") && (cpuSelection == "paper"))){
+    return "win";
+    }
+
+    else { 
+      return "lose";
+    }
+
   }
 
   /**
@@ -41,6 +58,22 @@ class RockPaperScissors {
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   play(userSelection){
+
+    generateCPUResponse();
+    determineWinner(userSelection, cpuSelection);
+
+    // if the user won the round
+    if (this.determineWinner == "win") {
+      this.score.user ++; 
+    }
+    
+    // if the user cpu the round
+    if (this.determineWinner == "lose") {
+      this.score.cpu ++;
+    }
+    
+    this.gameHistoryLog.push(this.username + " selected " + userSelection + ", CPU selected " + cpuSelection);
+
 
   }
 
