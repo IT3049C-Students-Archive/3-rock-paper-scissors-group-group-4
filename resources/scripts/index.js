@@ -12,7 +12,7 @@ const gameHistoryParagraph =  document.getElementById(`game-history`);
 let game;
 
 // hide game screen
-gameScreen.classList.add(`d-none`);
+//use "gameScreen.classList.add(`d-none`);"
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
