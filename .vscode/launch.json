@@ -2,14 +2,13 @@
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "pwa-chrome",
-      "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
-    }
-  ]
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "open index.html",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "postinstall": "node .scripts/badge.js"
+  }
 }
