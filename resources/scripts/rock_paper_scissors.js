@@ -41,9 +41,9 @@ class RockPaperScissors {
       return "tie" ;
     }
 
-    else if((userSelection === "rock" && cpuSelection === "scissors") || 
-    (userSelection === "paper" && cpuSelection === "rock") || 
-    (userSelection === "scissors" && cpuSelection === "paper")){
+    else if((userSelection == "rock" && cpuSelection == "scissors") || 
+    (userSelection == "paper" && cpuSelection == "rock") || 
+    (userSelection == "scissors" && cpuSelection == "paper")){
     return "win";
     }
 
@@ -57,7 +57,7 @@ class RockPaperScissors {
    * 
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
-  play(userAnswer){
+  play(userSelection){
 
     let CPUAnswer = this.generateCPUResponse();
     let outcome = this.determineWinner(userSelection, CPUAnswer);
