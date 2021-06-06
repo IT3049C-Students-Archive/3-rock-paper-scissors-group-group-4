@@ -1,4 +1,4 @@
-const { lowerCase } = require("lodash");
+//const { lowerCase } = require("lodash");
 
 class RockPaperScissors {
   constructor(username) {
@@ -36,7 +36,7 @@ class RockPaperScissors {
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   determineWinner(userSelection, cpuSelection){
-
+    
     if(userSelection == cpuSelection) {
       return "tie" ;
     }
